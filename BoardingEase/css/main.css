@@ -1,0 +1,780 @@
+/* General Reset */
+body, ul, li, a {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Navbar Styling */
+.hamburger-btn {
+    display: none;
+}
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #1e1e2f; /* Dark background for a modern app feel */
+    color: white;
+    padding: 0.8rem 2rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    position: fixed; /* Keep the navbar at the top */
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+/* Logo Styling */
+.logo {
+    font-size: 1.6rem;
+    font-weight: bold;
+    color: #ffcb57; /* Highlighted logo color */
+}
+
+/* Navigation Links Container */
+.nav-links { 
+    display: flex; 
+    gap: 2rem; 
+}
+
+/* Individual Navigation Links */
+.nav-links a { 
+    color: #ddd; /* Soft white */ 
+    font-size: 1rem;
+    font-weight: 500; 
+    padding: 0.5rem 1rem; 
+    border-radius: 8px; 
+    transition: background-color 0.3s, color 0.3s; 
+} 
+
+/* Hover Effect on Links */
+.nav-links a:hover { 
+    background-color: #ffcb57;
+    color: #1e1e2f; /* Text contrasts with the hover background */
+}
+
+/* Logout Button Styling */
+.logout-btn form {
+    margin: 0; 
+}
+.logout-btn{
+    margin-right: 40px;
+}
+
+.logout-btn button {
+    background-color: #ff5733; /* Red button color */ 
+    color: white;
+    padding: 10px 15px;
+    font-size: 1rem; 
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s; 
+}
+
+/* Hover Effect on Logout Button */
+.logout-btn button:hover { 
+    background-color: #c0392b; /* Darker red on hover */
+    transform: scale(1.05);     /* Slightly enlarge on hover */
+}
+
+
+/* Fixed Profile Container (Left Side) */
+.fixed-container {
+    position: fixed;
+    left: 0;
+    top: 70px; /* Offset for navbar */
+    width: 250px;
+    height: calc(100vh - 70px);
+    background-color: #fff;
+    border-right: 1px solid #ddd;
+    padding: 20px;
+    box-shadow: 2px 0 6px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+    overflow-y: auto;
+}
+    
+.fixed-container .profile-pic img {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 15px;
+    margin-top: 15px;
+    padding-left: 50px;
+}
+
+.fixed-container .profile-details p {
+    margin: 10px 0;
+    font-size: 0.9rem;
+    color: #333;
+}
+
+.edit-profile-btn {
+    display: block;
+    width: 100%;
+    padding: 10px 15px;
+    margin-top: 15px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+    font-size: 0.9rem;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.edit-profile-btn:hover {
+    background-color: #0056b3;
+}
+
+
+/* General Styles */
+#search-form {
+    padding: 20px;
+    background-color: #f9f9f9;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+#search-form form {
+    display: flex;
+    flex-direction: column;
+}
+
+#search-form label {
+    margin-bottom: 5px;
+}
+
+#search-form input {
+    margin-bottom: 10px;
+    padding: 8px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+}
+
+.submit-btn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.submit-btn:hover {
+    background-color: #45a049;
+}
+
+
+
+/* Right Container Styling */
+.right-container {
+    position: fixed;
+    right: 0;
+    top: 70px; /* Offset for navbar */
+    width: 300px;
+    height: calc(100vh - 70px);
+    background-color: #fff;
+    border-left: 1px solid #ddd;
+    padding: 20px;
+    box-shadow: -2px 0 6px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+}
+
+/* Toggle Buttons */
+.toggle-buttons {
+    display: flex;
+    justify-content: space-between;
+}
+
+.toggle-buttons button {
+    flex: 1;
+    padding: 10px;
+    font-size: 1rem;
+    border: none;
+    background-color: #ddd;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.toggle-buttons button.active {
+    background-color: #ffcb57;
+    color: #fff;
+}
+
+.toggle-buttons button:not(:last-child) {
+    margin-right: 5px;
+}
+
+/* Form Sections */
+.form-section {
+    display: none; /* Hidden by default */
+    flex-grow: 1;
+}
+
+.form-section h3 {
+    margin-bottom: 15px;
+}
+
+.form-section label {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.form-section input {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.form-section .submit-btn {
+    width: 100%;
+    padding: 10px;
+    background-color: #5c6bc0; /* Purple */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.form-section .submit-btn:hover {
+    background-color: #3f4a8a;
+}
+
+/* Show the currently active form */
+.form-section:not(.hidden) {
+    display: block;
+}
+
+/* Main Wrapper - Flexbox to arrange containers */
+.main-container {
+    display: flex;
+    justify-content: center; /* Center content horizontally */
+    margin-top: 70px;  /* Account for navbar height */
+    flex-grow: 1;
+    padding: 0 20px;  /* Add padding to ensure content doesn't touch edges */
+    width: 100%;
+}
+
+.newsfeed-container {
+    margin-left: 270px; /* Fixed margin from the left container */
+    margin-right: calc(4 / 3 * 270px); /* Dynamically set the right margin as 4/3 of the left margin */
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: calc(100% - (270px + calc(4 / 3 * 270px))); /* Adjust width to subtract both margins */
+    box-sizing: border-box;
+    overflow-y: auto;
+}
+
+
+/* Flexbox styling for search results */
+.search-results {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-between;
+}
+
+.room-item {
+    width: 48%;  /* Adjust width for 2-column layout */
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.room-item h4 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.room-item img.room-photo {
+    max-width: 300px;
+    max-height: 300px;
+    height: auto;
+    border-radius: 8px;
+    margin-top: 10px;
+}
+
+
+
+.result-card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin: 15px 0;
+    padding: 15px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    max-height: 500px;
+    overflow-y: auto;
+}
+
+.result-header h4 {
+    margin: 0;
+    font-size: 18px;
+    color: #333;
+}
+
+.result-header p {
+    margin: 5px 0 10px;
+    font-size: 14px;
+    color: #666;
+}
+
+.result-details p {
+    margin: 5px 0;
+    font-size: 14px;
+    color: #555;
+}
+
+.result-images {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.result-image {
+    width: 300px;
+    height: 300px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.newsfeed-entry {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin: 10px 0;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+}
+
+.newsfeed-entry img {
+    display: block;
+    margin: 5px 0;
+}
+.result-card {
+    position: relative; /* Make it a container for positioning */
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.result-actions {
+    position: absolute; /* Position relative to the result-card */
+    top: 10px;
+    right: 10px;
+    display: flex;
+    gap: 10px;
+}
+
+.edit-btn, .delete-btn {
+    padding: 8px 12px;
+    font-size: 14px;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.edit-btn {
+    background-color: #5c6bc0; /* Purple */
+}
+
+.edit-btn:hover {
+    background-color: #3f4a8a;
+}
+
+
+.delete-btn {
+    background-color: #e57373; /* Red */
+}
+
+.delete-btn:hover {
+    background-color: #d32f2f;
+}
+.notification-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 10px;
+    margin-bottom: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.notification-content {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.notification-message {
+    font-size: 14px;
+    color: #333;
+}
+
+.notification-date {
+    font-size: 12px;
+    color: #888;
+    margin-left: auto;
+}
+
+
+.request-card {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    padding: 20px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+}
+
+.request-card h4 {
+    font-size: 1.2em;
+}
+
+.request-card p {
+    font-size: 1em;
+}
+
+button {
+    margin-top: 10px;
+    padding: 5px 10px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+}
+
+.accept-request-btn {
+    background-color: #2ecc71;
+    color: white;
+}
+
+.reject-request-btn {
+    background-color: #e74c3c;
+    color: white;
+}
+
+button:hover {
+    opacity: 0.8;
+}
+.menu-bar{
+    display: none;
+}
+
+@media (max-width: 1330px) {
+        /* Show the hamburger button */
+    .hamburger-btn {
+        position: absolute;
+        display: block;
+        cursor: pointer;
+        font-size: 1.5rem;
+        background-color: #1e1e2f; /* Dark background for a modern app feel */
+        color: white;
+        left: 10px;
+        bottom: 10px;
+    }
+    .navbar{
+        justify-content: center;
+        height: 40px;
+
+    }
+    
+    .navbar .logo{
+        display: none;
+    }
+    .logout-btn{
+        position: absolute;
+        right: 30px;
+    }
+    .main-container{
+        display: none;
+    }
+    .newsfeed-container{
+        padding-top: 80px;
+        margin-left: 20px;
+        width: calc(100% - (350px)); /* Adjust width to subtract both margins */
+
+    }
+    .menu-bar{
+        position: absolute;
+        display: none;
+        z-index: 2000;
+        width: 250px;
+        height: 100vh;
+        left: 0px;
+        top: 50px;
+        padding: 0;
+        background-color: white; /* Dark background for a modern app feel */
+        color: black;
+        box-shadow: -2px 0 6px rgba(0, 0, 0, 0.1);
+        box-sizing: border-box;
+    }
+    .menu-bar.visible{
+        display: block;
+    }
+    .hidden{
+        display: none;
+    }
+    .logo-menu {
+        font-size: 1.6rem;
+        font-weight: bold;
+        color: #ffcb57; /* Highlighted logo color */
+        background-color: #1e1e2f;
+        height: 50px;
+        padding-left: 30px;
+        padding-top: 10px;
+    }
+    .logout-btn-menu button {
+        background-color: #ff5733; /* Red button color */ 
+        color: white;
+        padding: 10px 15px;
+        font-size: 1rem; 
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s, transform 0.2s; 
+        margin-left: 80px;
+        display: none;
+    }
+    
+    /* Hover Effect on Logout Button */
+    .logout-btn-menu button:hover { 
+        background-color: #c0392b; /* Darker red on hover */
+        transform: scale(1.05);     /* Slightly enlarge on hover */
+    }
+    .menu-bar .profile-pic img {
+        width: 100px;
+        height: 100px;
+        margin-bottom: 15px;
+        margin-top: 15px;
+        padding-left: 70px;
+    }
+    
+    .menu-bar .profile-details2 p{
+        font-size: 0.9rem; 
+        color: #333;
+        margin-left: 13px;
+    }
+    
+    .edit-profile-btn2 {
+        display: block;
+        width: 90%;
+        padding: 10px 15px;
+        margin-top: 15px;
+        margin-left: 10px;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        text-align: center;
+        font-size: 0.9rem;
+        font-weight: bold;
+        transition: background-color 0.3s;
+    }
+    
+    .edit-profile-btn:hover {
+        background-color: #0056b3;
+    }
+    .right-container{
+        top: 65px;
+    }
+    
+}
+
+
+/* Mobile Responsive Styling */
+@media (max-width: 768px) {
+
+    .navbar {
+        flex-direction: row;
+        padding: 1rem; 
+        justify-content: center;
+        height: 30px;
+    }
+
+    
+    .nav-links {
+        gap: 1rem;
+    }
+    .nav-links a {
+        text-align: center; 
+        width: 100%;
+    }
+    
+    .logout-btn {
+        margin-top: 0; /* Add margin on mobile for spacing */
+        display: none;
+    }
+    .logout-btn-menu button{
+        display: block;
+    }
+
+    .newsfeed-container {
+        margin-top: 50px;
+        margin-left: 0;
+        margin-right: 0;
+        width: 100%; /* Full width for smaller screens */
+        padding: 15px; /* Slightly reduce padding for smaller screens */
+    }
+
+    .room-item {
+        width: 100%; /* Full width for smaller screens */
+    }
+
+    /* Adjust search results for smaller screens */
+    .search-results {
+        flex-direction: column; /* Stack the items vertically */
+    }
+
+    .main-container {
+        display: flex;
+        justify-content: center; /* Center content horizontally */
+        margin-top: 70px;  /* Account for navbar height */
+        flex-grow: 1;
+        padding: 0 20px;  /* Add padding to ensure content doesn't touch edges */
+        width: 100%;
+        display: none;
+    }
+    .result-card{
+        margin-top: 30px;
+    }
+    .menu-bar{
+        top: 46px;
+    }
+    .right-container {
+        top: 60px;
+        height: 100%;
+        transform: translateX(0);
+        transition: transform 0.3s ease-in-out;
+    }
+    
+    .right-container.visible {
+        transform: translateX(0); /* Slides in */
+    }
+    
+    .arrow-button {
+        position: fixed;
+        top: 50%;
+        right: 0;
+        transform: translateY(-50%);
+        background-color: #5c6bc0; /* Matches submit button */
+        color: white;
+        border: none;
+        border-radius: 50%;
+        padding: 10px;
+        font-size: 1.2rem;
+        cursor: pointer;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        transition: all 0.3s ease;
+        z-index: 5000;
+    }
+    
+    .arrow-button.hidden {
+        right: 300px; /* Aligns with visible right-container */
+    }
+    
+}
+/* Modal Background */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* Ensure it's above other elements */
+}
+
+/* Hide the modal by default */
+.hidden {
+    display: none;
+}
+
+/* Modal Content */
+.modal-content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    width: 90%; /* Responsive width */
+    max-width: 500px; /* Limit the modal's width */
+    position: relative;
+    text-align: center;
+}
+
+/* Close Button */
+.close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #555;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.close:hover {
+    color: #ff0000; /* Highlight the close button on hover */
+}
+
+/* Input Fields */
+form label {
+    display: block;
+    margin: 10px 0 5px;
+    text-align: left;
+}
+
+form input {
+    width: 98%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+/* Submit Button */
+.submit-btn {
+    background-color: #007BFF;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.submit-btn:hover {
+    background-color: #0056b3;
+}

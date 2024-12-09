@@ -1,0 +1,127 @@
+/* General Reset */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    height: 100%;
+    background-color: #f4f7fc;
+}
+
+.wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding: 20px;
+}
+
+/* Form Container */
+.form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 600px;
+    width: 100%;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+/* Form Box Styling */
+.form-box {
+    padding: 30px;
+    width: 100%;
+    max-width: 300px;
+    display: none;
+}
+
+/* Login Form */
+.login {
+    display: block;
+}
+
+/* Signup Form */
+.signup {
+    display: none;
+}
+
+/* Form Title */
+h1 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    color: #333;
+}
+
+/* Input Fields */
+input[type="text"], input[type="password"] {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-sizing: border-box;
+    font-size: 1rem;
+    background-color: #f9f9f9;
+}
+
+/* Submit Button */
+button {
+    width: 100%;
+    padding: 12px;
+    background-color: #5C6BC0; /* Purple button */
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+/* Hover Effect for Button */
+button:hover {
+    background-color: #3f4a8a; /* Darker purple */
+}
+
+/* Links Styling */
+.link {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.link a {
+    color: #5C6BC0;
+    text-decoration: none;
+}
+
+.link a:hover {
+    text-decoration: underline;
+}
+
+/* Error Message Styling */
+.errors {
+    margin-top: 20px;
+    text-align: center;
+    color: red;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .form-container {
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    .form-box {
+        width: 100%;
+    }
+
+    h1 {
+        font-size: 1.6rem;
+    }
+
+    button {
+        font-size: 1rem;
+    }
+}
